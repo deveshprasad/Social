@@ -1,0 +1,44 @@
+<%- include("../partials/header") %> 
+<style>
+    body{
+        background-image: url(https://jooinn.com/images/italian-food-background-1.jpg);
+    }
+</style>
+<div class="bodyy" style="background-image: url();">
+<div class="container" style="background-image: url();">
+    <header class="jumbotron text-center" style="background-image: url(https://jooinn.com/images/italian-food-background-1.jpg);background-repeat: no-repeat;background-size:cover;box-shadow:0 6px 9px 6px rgb(0, 0, 0,0.9);">
+        <div class="conntainer">
+            <h1 class="display-2" style="color:whitesmoke;text-shadow: 5px 6px 5px rgb(0, 0, 0);font-weight:700;">Socials <i class="fa fa-cutlery"></i></h1>
+            <h2 style="color:rgb(253, 253, 253);text-shadow: 3px 4px 3px rgb(0, 0, 0);font-weight:700;">View Our Best "The Best !"<i class="fa fa-fire"></i> </h2>
+            <p>
+            <a class="btn btn-light btn-lg" href="/socials/new" style="background-color:rgb(0, 0, 0);color:rgb(255, 255, 255);box-shadow: 0 7px 10px 7px rgba(0, 0, 0, 0.1);">Add new Social <i class="fa fa-plus"></i></a>
+        </p>
+        </div>
+        
+    </header>
+    
+   
+   <div class="row text-center"  style="display: flex;flex-wrap: wrap;">
+    <% social.forEach((social)=>{ %> 
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="new-box" style="margin:10px;padding:0 0 5px 0 ">
+            <div class="thumbnail">
+                <img src="<%= social.image %>" > 
+                <div class="caption" >
+                    <h4 style="padding:20x;text-shadow: 5px 6px 5px rgb(0, 0, 0);font-weight:700;letter-spacing: 1px;"> <%= social.name %> </h4>
+                </div>    
+               
+                <p>
+                    <a href="/socials/<%= social._id %> " class="btn btn-lg" style="background-color: #000000;color: rgb(255, 255, 255);border: 2px solid rgba(255, 255, 255);box-shadow:0 6px 9px 6px rgb(0, 0, 0,0.9);">More Info  <i class="fa fa-search"></i></a>
+                </p>
+            </div>
+            </div>
+            
+        </div>
+    <% }); %> 
+   </div>
+    
+    
+</div>
+</div>
+<%- include("../partials/footer") %>

@@ -1,0 +1,79 @@
+body {
+    background-color: #000;
+  }
+  #landing-header {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 40vh;
+  }
+
+  #landing-header h1 {
+    color: #fff;
+  }
+  .slideshow { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .slideshow li { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 50s linear infinite; 
+    filter: blur(5px);
+  }
+
+  .slideshow li:nth-child(1) { 
+    background-image: url(https://images2.minutemediacdn.com/image/upload/c_crop,h_1126,w_2000,x_0,y_181/f_auto,q_auto,w_1100/v1554932288/shape/mentalfloss/12531-istock-637790866.jpg) 
+  }
+  .slideshow li:nth-child(2) { 
+    background-image: url(https://static.onecms.io/wp-content/uploads/sites/9/2020/03/19/fideos-secos-tacos-FT-RECIPE0420-1.jpg);
+    animation-delay: 10s; 
+  }
+  .slideshow li:nth-child(3) { 
+    background-image: url(https://www.englishclub.com/images/vocabulary/food/italian/italian-food-1024.jpg);
+    animation-delay: 20s; 
+  }
+  .slideshow li:nth-child(4) { 
+    background-image: url(https://b.zmtcdn.com/data/pictures/2/19398962/adc34160a716246aac060b116c844a77_o2_featured_v2.jpg);
+    animation-delay: 30s; 
+  }
+  .slideshow li:nth-child(5) { 
+    background-image: url(https://i2.wp.com/www.eatthis.com/wp-content/uploads/2019/06/hot-dog-combinations-with-crazy-toppings.jpg?fit=1200%2C879&ssl=1);
+    animation-delay: 40s; 
+  }
+
+  @keyframes imageAnimation { 
+    0% { 
+      opacity: 0; 
+      animation-timing-function: ease-in;
+    }
+    10% {
+      opacity: 1;
+      animation-timing-function: ease-out;
+    }
+    20% {
+      opacity: 1
+    }
+    30% {
+      opacity: 0
+    }
+  }
+  .no-cssanimations .slideshow li {
+	opacity: 1;
+}
