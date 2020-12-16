@@ -1,5 +1,14 @@
 <%- include("../partials/header") %>
-<div class="container">
+<style>
+    body{
+        background-image: url(https://jooinn.com/images/italian-food-background-1.jpg);
+        font-family: 'Architects Daughter', cursive;
+letter-spacing: 2px;
+color:white;
+       
+    }
+</style>
+<div class="container" style="border: 1px solid rgba(255, 255, 255);box-shadow:0 6px 9px 6px rgb(0, 0, 0,0.9);">
     <div class="row">
         <div class="col-lg-12">
         <h1 style="text-align: center;">Create a new social</h1>
@@ -8,25 +17,29 @@
         <div style="width: 100%;margin: 100px auto;">
         <form action="/socials" method="post">
             <div class="form-group">
-                <input class="form-control" type="text" name="name" placeholder="name">
+                <label style="font-size:2rem;background-color:rgba(0,0,0,0.75)" for="" class="label">Name :</label>
+                <input class="form-control" type="text" name="name" placeholder="name" style="background-color: rgba(0,0,0,0.69);color:whitesmoke">
                 
             </div>
             <div class="form-group">
-                <input class="form-control" type="number" name="price" placeholder="price" min="0.01" step="0.01">
+                <label style="font-size:2rem;background-color:rgba(0,0,0,0.75)" for="" class="label">Price ($) :</label>
+                <input class="form-control" type="number" name="price" placeholder="price" min="0.01" step="0.01" style="background-color: rgba(0,0,0,0.69);color:whitesmoke">
                 
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" name="image" placeholder="img url">     
+                <label style="font-size:2rem;background-color:rgba(0,0,0,0.75)" for="" class="label">Image (URL link) :</label>
+                <input class="form-control" type="text" name="image" placeholder="img url" style="background-color: rgba(0,0,0,0.69);color:whitesmoke">     
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" name="description" placeholder="describe it please">     
+                <label style="font-size:2rem;background-color:rgba(0,0,0,0.75)" for="" class="label">Description :</label> 
+                <input class="form-control" type="text" name="description" placeholder="describe it please" style="background-color: rgba(0,0,0,0.69);color:whitesmoke">     
             </div>
             <div class="form-group">
-                <button class="btn btn-lg btn-dark btn-block">Submit</button>
+                <button class="btn btn-lg  btn-block" style="background-color: #000000;color: rgb(255, 255, 255);border: 2px solid rgba(255, 255, 255);box-shadow:0 6px 9px 6px rgb(0, 0, 0,0.9);">Submit</button>
             </div>
         </div>
         </form>
-        <a href="/socials">Go Back</a>
+        <a href="/socials" class="btn btn-lg" style="background-color: #000000;color: rgb(255, 255, 255);border: 2px solid rgba(255, 255, 255);box-shadow:0 6px 9px 6px rgb(0, 0, 0,0.9);">Go Back</a>
         </div>
         
         
