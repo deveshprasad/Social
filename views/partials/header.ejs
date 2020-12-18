@@ -17,13 +17,13 @@
     <nav class="navbar navbar-default navbar-light" style="background-color: rgba(0, 0, 0, 0.65);color: whitesmoke;">
   <div class="container-fluid">
       <div class="navbar-header">
-          <a href="/" class="navbar-brand" style="color:white;margin-right: 10px;"><i class="fa fa-cutlery"></i> Social</a>
+          <a href="/" class="navbar-brand bigbox" style="color:white;margin-right: 10px;font-weight: 800;"><i class="fa fa-cutlery"></i> Social</a>
          <% if(!currentUser){  %>
-            <a href="/register" class="navbar-brand" style="color:white;margin-left: 10px;"><i class="fa fa-user-plus"></i>  SignUp</a>
-            <a href="/login" class="navbar-brand" style="color:white;"><i class="fa fa-sign-in"></i>  SignIn</a>
+            <a href="/register" class="navbar-brand bigbox" style="color:white;margin-left: 10px;font-weight:800;"><i class="fa fa-user-plus"></i>  SignUp</a>
+            <a href="/login" class="navbar-brand bigbox" style="color:white;font-weight: 800;"><i class="fa fa-sign-in"></i>  SignIn</a>
           <%}else{ %>
             <a>        Hey ! <%= currentUser.username%>       </a>
-            <a href="/logout" class="navbar-brand" style="color:white;margin:0 10px;"><i class="fa fa-sign-out"></i>  LogOut</a>
+            <a href="/logout" class="navbar-brand bigbox" style="color:white;margin:0 10px;font-weight:800;"><i class="fa fa-sign-out"></i>  LogOut</a>
 
           <%}%>
           

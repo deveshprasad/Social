@@ -22,7 +22,7 @@ router.post("/",middleware.isLoggedIn,(req,res)=>{
 social.findById(req.params.id,(err,social)=>{
   if(err){
     req.flash("error","Something went wrong");
-      console.log(err);
+      console.log(error);
      
   }else{
     Comment.create(req.body.comment,(err,comment)=>{
@@ -51,6 +51,7 @@ router.get("/:comment_id/edit",middleware.checkCommentOwnership,(req,res)=>{
     social.findById(req.params.id,(err,foundsocial)=>{
         if(err||foundsocial){
             req.flash("error","Cannot find it");
+            console.log(err);
             return res.redirect("back");
         }
         Comment.findById(req.params.comment_id,(err,foundComment)=>{
