@@ -35,7 +35,7 @@ social.findById(req.params.id,(err,social)=>{
             social.comments.push(comment);
             social.save();
             console.log(comment);
-            req.flash("success","Successfully Added Comments");
+            req.flash("success","Successfully Added Comment");
             res.redirect("/socials/"+social._id);
         }
     });
@@ -50,7 +50,7 @@ social.findById(req.params.id,(err,social)=>{
 router.get("/:comment_id/edit",middleware.checkCommentOwnership,(req,res)=>{
     social.findById(req.params.id,(err,foundsocial)=>{
         if(err||foundsocial){
-            req.flash("error","Cannot find it");
+            req.flash("error","Sorry! Cannot find it please delete it and add a new one");
             console.log(err);
             return res.redirect("back");
         }

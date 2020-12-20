@@ -19,7 +19,7 @@ router.get("/",(req,res)=>{
  const newUser= new User({username:req.body.username});
  User.register(newUser,req.body.password,(err,user)=>{
      if(err){
-         console.log(err);
+        // console.log(err);
          req.flash("error",err.message);
          return res.render("register");
      }
