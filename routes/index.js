@@ -24,7 +24,7 @@ router.get("/",(req,res)=>{
          return res.render("register");
      }
      passport.authenticate("local")(req,res,()=>{
-         req.flash("success","Welcome "+user.username);
+         req.flash("success","Welcome!"+user.username+" Enjoy!");
      res.redirect("/socials");
      });
  });
@@ -45,7 +45,7 @@ router.get("/",(req,res)=>{
  
  router.get("/logout",(req,res)=>{
  req.logout();
- req.flash("success","LOGGED U OUT");
+ req.flash("success","Successfly Logged You Out! Please Visit Us Again");
  res.redirect("/socials");
  });
  

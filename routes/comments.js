@@ -21,7 +21,7 @@ router.post("/",middleware.isLoggedIn,(req,res)=>{
 // look social uisng id
 social.findById(req.params.id,(err,social)=>{
   if(err){
-    req.flash("error","Something went wrong");
+    req.flash("error","Something went wrong ! Please Refresh or Try Again ");
       console.log(error);
      
   }else{
@@ -35,7 +35,7 @@ social.findById(req.params.id,(err,social)=>{
             social.comments.push(comment);
             social.save();
             console.log(comment);
-            req.flash("success","Successfully Added Comment");
+            req.flash("success","Successfully Added Comment! Please Refresh If Not Visible!");
             res.redirect("/socials/"+social._id);
         }
     });

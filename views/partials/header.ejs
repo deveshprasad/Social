@@ -12,6 +12,7 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://use.fontawesome.com/a73d65bbee.js"></script>
     <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="icon" href="/images/favicon.ico">
 </head>
 <body>
     <nav class="navbar navbar-default navbar-light" style="background-color: rgba(0, 0, 0, 0.65);color: whitesmoke;">
@@ -22,7 +23,7 @@
             <a href="/register" class="navbar-brand bigbox" style="color:white;margin-left: 10px;font-weight:800;"><i class="fa fa-user-plus"></i>  SignUp</a>
             <a href="/login" class="navbar-brand bigbox" style="color:white;font-weight: 800;"><i class="fa fa-sign-in"></i>  SignIn</a>
           <%}else{ %>
-            <a>        Hey ! <%= currentUser.username%>       </a>
+            <a style="font-weight: 800;">        Hey ! <%= currentUser.username%>       </a>
             <a href="/logout" class="navbar-brand bigbox" style="color:white;margin:0 10px;font-weight:800;"><i class="fa fa-sign-out"></i>  LogOut</a>
 
           <%}%>

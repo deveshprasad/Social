@@ -2,8 +2,10 @@
 <style>
     body{
         background-color: #000000;
-background-image: url("https://jooinn.com/images/italian-food-background-1.jpg");
+background-image: url("/images/background.jpg");
 font-family: 'Architects Daughter', cursive;
+background-size:     cover;  
+    background-position: center center;
 letter-spacing: 2px;
 /* font-family: 'Source Code Pro', monospace; */
 
@@ -14,7 +16,7 @@ letter-spacing: 2px;
             background-attachment: black;
         }
 </style>
-<div class="container" style="border: 1px solid rgba(255, 255, 255);box-shadow:0 6px 9px 6px rgb(0, 0, 0,0.9);">
+<div class="container hey" style="border: 1px solid rgba(255, 255, 255);box-shadow:0 6px 9px 6px rgb(0, 0, 0,0.9);">
     <div class="row">
         <div class="col-md-3">
             <br>
@@ -52,7 +54,7 @@ letter-spacing: 2px;
                             <div class="col-md-12" style="background-color: rgba(0, 0, 0,0.80);">
                                <strong style="color: whitesmoke;font-weight: 700;font-size: 1.8rem;"><i class="fa fa-user"></i> <%= comment.author.username%></strong> 
                                 <span class="pull-right" id="p1" style="color: rgb(240, 231, 231)"></span>
-                                <p style="color: white"><i class="fa fa-comment"></i> <%= comment.text%></p>
+                                <p style="color: white"><i class="fa fa-comment"></i> <%= comment.text%> <span class="pull-right" id="p1" style="color: rgb(240, 231, 231)"></span></p>
                                 <% if(currentUser&&comment.author.id.equals(currentUser._id)){%>
                             <a class="bigbox btn btn-warning" 
                             href="/socials/<%=social._id%>/comments/<%= comment._id %>/edit">

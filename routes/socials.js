@@ -3,15 +3,36 @@ const router=express.Router({mergeParams:true});
 const social=require("../models/social");
 const middleware=require("../middleware");
 router.get("/",(req,res)=>{
-    //console.log(req.user);
+    var noMatch=null;
+    // eval(require("local"));
+    // //console.log(req.user);
    // get alll socials from db
-   social.find({},(err,social)=>{
-       if(err){
-           console.log(err);
-       }else{
-        res.render("social/index",{social:social});
-       }
-   });
+   if(req.query.search){
+    const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+    social.find({name:regex},(err,social)=>{
+        if(err){
+            console.log(err);
+        }else{
+          
+            if(social.length<1){
+             var noMatch="NO SOCIAL WITH THAT NAME EXISTS!"
+            }
+                res.render("social/index",{social:social,noMatch:noMatch});
+            
+    
+         
+        }
+    });
+   }else{
+    social.find({},(err,social)=>{
+        if(err){
+            console.log(err);
+        }else{
+         res.render("social/index",{social:social,noMatch:noMatch});
+        }
+    });
+   }
+   
  
 });
 
@@ -64,7 +85,7 @@ router.get("/new",middleware.isLoggedIn,(req,res)=>{
 router.get("/:id",(req,res)=>{
     social.findById(req.params.id).populate("comments").exec((err,foundsocial)=>{
         if(err||!foundsocial){
-            req.flash("error","social not found");
+            req.flash("error","Social Not Found Sorry! Please Refresh And Try Again");
             res.redirect("back");
         }else{
             console.log(foundsocial);
@@ -110,5 +131,7 @@ social.findByIdAndDelete(req.params.id,(err,deleted)=>{
   });
 });
 
-
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
 module.exports=router;

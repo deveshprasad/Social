@@ -1,32 +1,48 @@
 <%- include("../partials/header") %> 
 <style>
     body{
-        background-image: url(https://jooinn.com/images/italian-food-background-1.jpg);
+        background-image: url(/images/background.jpg);
         font-family: 'Architects Daughter', cursive;
 letter-spacing: 2px;
          /* font-family: 'Roboto', sans-serif;  */
-         
+ 
+        background-size:     cover;  
+    background-position: center center; 
     }
     .btn:hover{
              background-color: white;
              color: black;
          }
 </style>
-<div class="bodyy" >
+<div class="bodyy hey" >
 <div class="container" >
-    <header class="jumbotron text-center" style="background-image: url(https://jooinn.com/images/italian-food-background-1.jpg);background-repeat: no-repeat;background-size:cover;box-shadow:0 6px 9px 6px rgb(0, 0, 0,0.9);">
+    <header class="jumbotron hey text-center" style="background-image: url(/images/background.jpg);background-repeat: no-repeat;background-size:cover;box-shadow:0 6px 9px 6px rgb(0, 0, 0,0.9);">
         <div class="conntainer">
-            <h1 class="display-2 rotate-vertical" style="color:whitesmoke;text-shadow: 5px 6px 5px rgb(0, 0, 0);font-weight:700;">Socials <i class="fa fa-cutlery bigbox "></i></h1>
+            <h1 class="display-2 bigbox" style="color:whitesmoke;text-shadow: 5px 6px 5px rgb(0, 0, 0);font-weight:700;">Socials <i class="fa fa-cutlery"></i></h1>
             <h2 style="color:rgb(253, 253, 253);text-shadow: 3px 4px 3px rgb(0, 0, 0);font-weight:700;">View Our Best "The Best !"<i class="fa fa-fire bigbox"></i> </h2>
+            <div class="text-center">
+                <form action="/socials" method="GET" class="text-center" style="width:100%">
+                    <div class="form-group text-center" style="text-align:center;justify-content:center">
+                        <input type="text" name="search" class="text-center" placeholder="Search Your Favourites" style="width:60%;height:40px;background-color:rgb(0, 0, 0);color:rgb(255, 255, 255);">
+                        <input type="submit" value="Search" class="btn text-center bigbox" style="background-color:rgb(0, 0, 0);color:rgb(255, 255, 255);box-shadow: 0 7px 10px 7px rgba(0, 0, 0, 0.1);">
+                    </div>
+                    </form>
+            </div>
             <p>
             <a class="btn btn-light btn-lg bigbox" href="/socials/new" style="background-color:rgb(0, 0, 0);color:rgb(255, 255, 255);box-shadow: 0 7px 10px 7px rgba(0, 0, 0, 0.1);">Add new Social <i class="fa fa-plus"></i></a>
         </p>
+        
         </div>
         
     </header>
     
    
    <div class="row text-center"  style="display: flex;flex-wrap: wrap;">
+   <div class="col-lg-12">
+   <%if(noMatch!==null){%>
+   <h1 style="background-color:rgba(0,0,0,0.75);color:white"><%=noMatch%></h1>
+   <%}%>
+   </div>
     <% social.forEach((social)=>{ %> 
         <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="new-box bigbox" style="margin:10px;padding:0 0 5px 0 ">
