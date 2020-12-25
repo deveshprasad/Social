@@ -16,7 +16,11 @@ router.get("/",(req,res)=>{
    res.render("register");
  });
  router.post('/register',(req,res)=>{
- const newUser= new User({username:req.body.username});
+ var newUser= new User({username:req.body.username});
+  //eval(require("locus"))
+  if(req.body.adminCode==="secretCode123"){
+      newUser.isAdmin=true;
+  }
  User.register(newUser,req.body.password,(err,user)=>{
      if(err){
         // console.log(err);

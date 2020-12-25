@@ -11,7 +11,7 @@ middlewareObj.checksocialOwnership=function(req,res,next){
                     req.flash("error","social not found");
                     res.redirect("back");
                 }else{
-                    if(foundsocial.author.id.equals(req.user._id)){
+                    if(foundsocial.author.id.equals(req.user._id)||req.user.isAdmin){
                         next();
                         
                     }else{
@@ -44,11 +44,11 @@ middlewareObj.checkCommentOwnership=function(req,res,next){
                     req.flash("error","Comment NOT found");
                     res.redirect("back");
                 }else{
-                    if(foundComment.author.id.equals(req.user._id)){
+                    if(foundComment.author.id.equals(req.user._id)||req.user.isAdmin){
                         next();
                         
                     }else{
-                        req.flash("error","come on you dont have permission");
+                        req.flash("error","Come on you dont have permission");
                         res.redirect("back");
                     }
                     
@@ -56,7 +56,7 @@ middlewareObj.checkCommentOwnership=function(req,res,next){
                 } 
             });
         }else{
-            req.flash("error","Pllease Login First ");
+            req.flash("error","Please Login First ");
            res.redirect("back");
         }
         ///reedirect
