@@ -1,0 +1,40 @@
+<%- include("../partials/header") %> 
+<style>
+    body{
+        background-color: #000000;
+background-image: url("/images/background.jpg");
+font-family: 'Architects Daughter', cursive;
+background-size:     cover;  
+    background-position: center center;
+letter-spacing: 2px;
+/* font-family: 'Source Code Pro', monospace; */
+
+        
+    }
+</style>
+<div class="container hey" style="border: 1px solid rgba(255, 255, 255);box-shadow:0 6px 9px 6px rgb(0, 0, 0,0.75);">
+<div class="row">
+ <div class="col-md-6 " style="background-color: rgb(0, 0, 0,0.65);color:white">
+<h1><%=user.firstName + " " + user.lastName %></h1>
+<div class="thumbnail">
+    <img src="<%=user.avatar%>" alt="user profile image" srcset="" style="box-shadow: 0 5px 8px 5px rgba(0, 0, 0, 0.8);border:1px solid rgb(177, 176, 176)">
+    <div class="caption"><a href="mailto:<%=user.email%>" target="_blank"><h3><i class="fa fa-envelope"></i> <%= user.email%></h3></a></div>
+</div>
+<p><%=user.description%></p>
+ </div>
+ <div class="col-md-6" style="background-color: rgb(0, 0, 0,0.55);color:white;">
+<h1><%= user.firstName %>'s Socials</h1>
+        <ol>
+            <% socials.forEach(function(social) {  %>
+                <li><p style="font-size:2rem"><a href="/socials/<%= social.id %>"><%=social.name%> : $ <%=social.price%></p>
+               <img class="img-responsive" src="<%= social.image %>" width="100%" style="box-shadow: 0 5px 8px 5px rgba(0, 0, 0, 0.9);border:2px solid rgb(184, 184, 184);border-radius: 15px;"></a></li>
+            <% }); %>      
+        </ol>
+        <div class="" style="text-align:right">
+            <a href="/socials" class="btn btn-lg bigbox"style="background-color: #000000;color: rgb(255, 255, 255);border: 2px solid rgba(255, 255, 255);box-shadow:0 6px 9px 6px rgb(0, 0, 0,0.9);border-radius: 5px;">Go Back</a>
+        </div>
+    
+ </div>
+</div>
+</div>
+<%- include("../partials/footer") %> 

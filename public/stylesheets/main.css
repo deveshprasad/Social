@@ -30,17 +30,6 @@
 .clearfix:after{clear:both;display:block}
 a{color:inherit;text-decoration:none}
 
-.login-wrap{
-	width: 100%;
-    margin:auto;
-    margin-top:50px;
-	max-width:550px;
-	min-height:550px;
-	position:relative;
-	background-color: rgb(0, 0, 0,0.55);
-    box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
-    
-}
 .login-html{
 	width:100%;
 	height:100%;
@@ -198,13 +187,13 @@ a{color:inherit;text-decoration:none}
 }
 @keyframes pop {
 	0% {
-		transform: scale(0.9,0.9);
+		transform: scale(1,1);
 	}
 	50% {
-		transform: scale(1.2,1.2);
+		transform: scale(1.1,1.1);
 	}
 	100% {
-		transform: scale(0.9,0.9);
+		transform: scale(1,1);
 	}
 }
 

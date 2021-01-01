@@ -49,7 +49,8 @@ social.findById(req.params.id,(err,social)=>{
 
 router.get("/:comment_id/edit",middleware.checkCommentOwnership,(req,res)=>{
     social.findById(req.params.id,(err,foundsocial)=>{
-        if(err||foundsocial){
+       
+        if(err||!foundsocial){
             req.flash("error","Sorry! Cannot find it please delete it and add a new one");
             console.log(err);
             return res.redirect("back");
@@ -62,7 +63,7 @@ router.get("/:comment_id/edit",middleware.checkCommentOwnership,(req,res)=>{
             }
            });
     });
-
+    // eval(require("locus"))
 });
 
 router.put("/:comment_id",middleware.checkCommentOwnership,(req,res)=>{

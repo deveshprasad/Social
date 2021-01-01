@@ -15,24 +15,36 @@
     <link rel="icon" href="/images/favicon.ico">
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-light" style="background-color: rgba(0, 0, 0, 0.65);color: whitesmoke;">
-  <div class="container-fluid">
-      <div class="navbar-header">
-          <a href="/" class="navbar-brand bigbox" style="color:white;margin-right: 10px;font-weight: 800;"><i class="fa fa-cutlery"></i> Social</a>
-         <% if(!currentUser){  %>
-            <a href="/register" class="navbar-brand bigbox" style="color:white;margin-left: 10px;font-weight:800;"><i class="fa fa-user-plus"></i>  SignUp</a>
-            <a href="/login" class="navbar-brand bigbox" style="color:white;font-weight: 800;"><i class="fa fa-sign-in"></i>  SignIn</a>
-          <%}else{ %>
-            <a style="font-weight: 800;">        Hey ! <%= currentUser.username%>       </a>
-            <a href="/logout" class="navbar-brand bigbox" style="color:white;margin:0 10px;font-weight:800;"><i class="fa fa-sign-out"></i>  LogOut</a>
-
-          <%}%>
-          
-          
-      </div>
-      
-  </div>
-    </nav>
+  <nav class="navbar navbar-expand-md navbar-dark mb-1" style="font-weight:700;font-size: 1.2rem; font-family: 'Architects Daughter', cursive;letter-spacing: 2px;color:white;background-color: rgba(0,0,0,0.95);">
+    <a class="navbar-brand" href="/"><i class="fa fa-cutlery"></i> Socials</a>
+    <button style="color:white;background-color: rgba(0,0,0,0.95);" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" style="color:white;"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item <%= typeof page !== 'undefined' && page === 'socials' ? 'active' : '' %>">
+          <a href="/socials" class="nav-link"><i class="fa fa-home"></i> Home</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+          <% if(!currentUser){ %>
+              <li class="nav-item <%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>">
+                <a href="/login" class="nav-link"><i class="fa fa-sign-in" aria-hidden="true"></i> SignIn</a>
+              </li>
+              <li class="nav-item <%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>">
+                <a href="/register" class="nav-link"><i class="fa fa-user-plus" aria-hidden="true"></i> SignUp</a>
+              </li>
+          <% } else { %>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Hey ! <%= currentUser.firstName %></a>
+              </li>
+              <li class="nav-item">
+                <a href="/logout" class="nav-link"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+              </li>
+          <% } %>
+      </ul>
+    </div>
+  </nav>
     <div class="container">
       <% if(error&& error.length>0){%>
         <div class="alert alert-danger" role="alert"><%=error%></div>
@@ -41,4 +53,3 @@
       <div class="alert alert-success" role="alert"><%=success%></div>
       <% } %>  
     </div>
-    
