@@ -1,0 +1,36 @@
+<%- include("partials/header") %>
+<style>
+    body{
+        background-image: url(/images/background.jpg);
+        font-family: 'Architects Daughter', cursive;
+letter-spacing: 3px;
+         /* font-family: 'Roboto', sans-serif;  */
+     color:white;
+        background-size:     cover;  
+    background-position: center center;
+	font-weight:800; 
+    }
+</style>
+<div class="container hey">
+	<div class="row" style="background-color: rgba(0,0,0,0.75);color:white;margin: 12% auto;">
+		<div class="col-md-12">
+			<form action="/reset/<%= token %>" method="POST">
+				<div class="" style="text-align: center;">
+					<legend style="font-size: 3.5rem;color:white">Reset Password</legend>
+				</div>
+			  <div class="form-group">
+				<label style="font-size: 2.5rem;color:white" for="password">New Password</label>
+				<input type="password" name="password" value="" placeholder="NEW PASSWORD" autofocus="autofocus" class="form-control" style="color:black" />
+			  </div>
+			  <div class="form-group">
+				<label style="font-size: 2.5rem;color:white" for="confirm">Confirm Password</label>
+				<input type="password" name="confirm" value="" placeholder="CONFIRM PASSWORD" class="form-control"/>
+			  </div>
+			  <div class="form-group">
+				<button type="submit" class="btn btn-lg bigbox btn-block" style="background-color: #000000;color: rgb(255, 255, 255);border: 2px solid rgba(255, 255, 255);box-shadow:0 6px 9px 6px rgb(0, 0, 0,0.9);border-radius: 5px;">Update Password</button>
+			  </div>
+			</form>
+		</div>
+	</div>
+</div>
+<%- include("partials/footer") %>

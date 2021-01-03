@@ -98,6 +98,8 @@ a{color:inherit;text-decoration:none}
 	padding:15px 20px;
 	border-radius:25px;
 	background:rgba(255,255,255,.1);
+	font-weight: 800;
+	letter-spacing: 5px;
 }
 .login-form .group input[data-type="password"]{
 	text-security:circle;
@@ -106,9 +108,21 @@ a{color:inherit;text-decoration:none}
 .login-form .group .label{
 	color:rgb(219, 212, 212);
 	font-size:12px;
+	letter-spacing: 5px;
 }
 .login-form .group .button{
 	background:#1161ee;
+	font-weight: 800;
+}
+.login-form .group .button2{
+	background:#ffee00;
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	width:100%;
+    font-weight: 800;
+	display:block;
+
 }
 .login-form .group label .icon{
 	width:15px;

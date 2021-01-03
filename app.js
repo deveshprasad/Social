@@ -1,3 +1,5 @@
+// configure dotenv
+require('dotenv').config()
 const express=require("express");
 const bodyParser=require("body-parser");
 const mongoose=require("mongoose");
@@ -8,15 +10,14 @@ const methodOverride=require("method-override");
 const social =require("./models/social");
 const Comment =require("./models/comment");
 const User =require("./models/user");
-const seedDB=require("./seeds");
-
+// const seedDB=require("./seeds");
 const commentRoutes=require("./routes/comments"),
 socialRoutes=require("./routes/socials"),
 indexRoutes=require("./routes/index");
 
 const app=express();
 
-mongoose.connect("mongodb://localhost:27017/SocialDB",{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false});
+mongoose.connect("mongodb://localhost:27017/SocialDB",{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false,useCreateIndex:true});
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname+"/public"));
@@ -28,7 +29,7 @@ app.locals.moment = require('moment');
 //////////////////////////passport config
 
 app.use(require("express-session")({
-    secret:"I AM A goldiggerbitch ",
+    secret:process.env.secretMessage,
     resave:false,
     saveUninitialized:false
 }));
