@@ -6,13 +6,21 @@ const Social=require("../models/social");
 var async=require("async");
 var nodemailer=require("nodemailer");
 var crypto=require("crypto");
+const middleware=require("../middleware");
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.sendgrid_api_key);
+
 
 router.get("/",(req,res)=>{
     res.render("landing");
  });
  
  
- /////////////////////////////
+ ///////////////////////////// contact 
+ router.get("/contact",(req,res)=>{
+  res.render("contact");
+});
+
  
  /////////////////////////////AUTH ROUTES
  ///////SHOW REGISTER
@@ -199,4 +207,41 @@ router.get('/forgot', function(req, res) {
      
   });
  });  
+ 
+ ///////////////////////////// contact 
+ router.get("/contact",middleware.isLoggedIn,(req,res)=>{
+  res.render("contact");
+});
+// POST 
+router.post('/contact',middleware.isLoggedIn,async (req, res) => {
+  let { name, email, message } = req.body;
+  name = req.sanitize(name);
+  email = req.sanitize(email);
+  message = req.sanitize(message);
+  const msg = {
+    to: 'ddddevesh2001@gmail.com',
+    from: "ddddevesh2001@gmail.com",
+    subject: `Social Contact Form Submission from ${name}`,
+    text: message,
+    html: `
+    <h1>Hi there, this email is from, ${name} regarding Socials</h1>
+    <p>${message}</p>
+    `,
+  };
+  
+  try {
+    await sgMail.send(msg);
+    req.flash('success', 'Thank you for your response, We will reply to your email ASAP.');
+    res.redirect('/contact');
+  } catch (error) {
+    console.error(error);
+    if (error.response) {
+      console.error(error.response.body)
+    }
+    req.flash('error', 'Sorry, something went wrong, please contact deveshprasad577@yahoo.com');
+    res.redirect('back');
+  }
+
+});
+
  module.exports=router;

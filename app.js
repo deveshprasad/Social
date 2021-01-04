@@ -11,6 +11,7 @@ const social =require("./models/social");
 const Comment =require("./models/comment");
 const User =require("./models/user");
 // const seedDB=require("./seeds");
+const expressSanitizer = require('express-sanitizer');
 const commentRoutes=require("./routes/comments"),
 socialRoutes=require("./routes/socials"),
 indexRoutes=require("./routes/index");
@@ -18,11 +19,13 @@ indexRoutes=require("./routes/index");
 const app=express();
 
 mongoose.connect("mongodb://localhost:27017/SocialDB",{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false,useCreateIndex:true});
+app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname+"/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
+app.use(expressSanitizer());
 //require moment
 app.locals.moment = require('moment');
 //seedDB();  //seed the db
