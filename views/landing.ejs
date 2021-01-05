@@ -4,31 +4,12 @@
         <title>Socials</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="/stylesheets/landing.css">
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
         <script src="https://use.fontawesome.com/a73d65bbee.js"></script>
-<link rel="icon" href="/images/favicon.ico">
+        <link rel="icon" href="/images/favicon.ico">
     </head>
-    <body>
-    <style>
-    body{font-family: 'Architects Daughter', cursive;
-        letter-spacing: 2px;
-                }
-                #landing-header{
-                    padding-top: 33.3vh;
-                }
-                @media only screen and (max-width: 992px) {
-                    #landing-header {
-        padding-top:25vh;
-    }
-                }
-             @media only screen and (max-width: 600px) {
-                    #landing-header {
-        padding-top:25vh;
-    }
-                } 
-    </style>
-
+<body>
+<style>body{font-family: 'Architects Daughter', cursive;letter-spacing:4px;}#landing-header{padding-top: 33.3vh;}@media only screen and (max-width: 992px) {#landing-header {padding-top:25vh;}}@media only screen and (max-width: 600px) {#landing-header {padding-top:25vh;}} </style>
     <div class="container hey">
         <% if(error && error.length > 0){ %>
             <div class="alert alert-danger" role="alert">
@@ -41,17 +22,11 @@
             </div>
         <% } %>
     </div>
-    
     <div id="landing-header" class="hey">
-        
          <h1 class="rotate-vertical" style="font-size:8rem;font-weight: 800;text-shadow: 5px 6px 5px rgb(0, 0, 0,0.9);font-weight:700;">Welcome to Socials! <i class="fa fa-cutlery" style="color:lightgray"></i></h1>
-         <hr class="header-hr" style="width:60%;
-    
-         border-left: 9px solid rgb(255, 255, 255);border-radius: 15px;border-right: 9px solid rgb(255, 255, 255);border-top: 9px solid rgb(255, 255, 255);border-bottom: 9px solid rgb(255, 255, 255)
-     ">
+         <hr class="header-hr" style="width:60%;border-left: 9px solid rgb(255, 255, 255);border-radius: 15px;border-right: 9px solid rgb(255, 255, 255);border-top: 9px solid rgb(255, 255, 255);border-bottom: 9px solid rgb(255, 255, 255)">
 		<a href="/socials" class="btn btn-lg bigbox" style="background-color: black;color:white;border:1px solid white;box-shadow: 0 6px 8px 6px rgba(0, 0, 0, 0.9);border-radius: 5px;">View All socials <i class="fa fa-search"></i></a>
     </div>
-    
     <ul class="slideshow">
       <li></li>
       <li></li>
@@ -59,5 +34,4 @@
       <li></li>
       <li></li>
     </ul>
-
 <%- include("partials/footer") %>  

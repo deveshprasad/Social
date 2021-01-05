@@ -1,0 +1,26 @@
+try { 
+	if(webengage.util.getWebengageCookie().session.upf.devices) {
+    webengage.screen({
+        'hasSynced': true
+    });
+    for (key in webengage.util.getWebengageCookie().session.upf.devices) {
+        if (webengage.util.getWebengageCookie().session.upf.devices[key][0].sdk_id && webengage.util.getWebengageCookie().session.upf.devices[key][0].sdk_id > 1) {
+            webengage.screen({
+                'hasApp': true
+            });
+        }
+    }
+}
+
+if(!webengage.util.getWebengageCookie().cuid) {
+    webengage.screen({
+        'hasSynced': true
+    });
+}
+ } catch(e) { 
+ 	if (e instanceof Error) { 
+		var data = e.stack || e.description;
+		data = (data.length > 900 ? data.substring(0, 900) : data);
+	 	webengage.eLog(null, 'error', data, 'cwc-error','cwc', '~hg3ce8');
+	 }
+ }

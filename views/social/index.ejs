@@ -1,21 +1,6 @@
 <%- include("../partials/header") %> 
-<style>
-    body{
-        background-image: url(/images/background.jpg);
-        font-family: 'Architects Daughter', cursive;
-letter-spacing: 3px;
-         /* font-family: 'Roboto', sans-serif;  */
- 
-        background-size:     cover;  
-    background-position: center center; 
-    }
-    .btn:hover{
-             background-color: white;
-             color: black;
-         }
-</style>
+<style>body{background-image: url(/images/background.jpg);font-family: 'Architects Daughter', cursive;letter-spacing: 3px;background-size:cover;background-position: center center;}.btn:hover{background-color: white;color: black;}</style>
 <div class="bodyy hey" >
-     
 <div class="container" >
     <div class="admin text-center">
         <% if(currentUser && currentUser.isAdmin){ %>
@@ -37,12 +22,8 @@ letter-spacing: 3px;
             <p>
             <a class="btn btn-light btn-lg bigbox" href="/socials/new" style="background-color:rgb(0, 0, 0);color:rgb(255, 255, 255);box-shadow: 0 7px 10px 7px rgba(0, 0, 0, 0.1);border-radius: 5px;">Add new Social <i class="fa fa-plus"></i></a>
         </p>
-        
         </div>
-        
     </header>
-    
-   
    <div class="row text-center hey"  style="display: flex;flex-wrap: wrap;">
    <div class="col-lg-12 hey">
    <%if(noMatch!==null){%>
@@ -57,18 +38,14 @@ letter-spacing: 3px;
                 <div class="caption" >
                     <h4 style="padding:20x;text-shadow: 5px 6px 5px rgb(0, 0, 0);font-weight:700;letter-spacing: 1px;"> <%= social.name %> </h4>
                 </div>    
-               
                 <p>
                     <a href="/socials/<%= social._id %> " class="btn btn-lg bigbox more-info" style="background-color: #000000;color: rgb(255, 255, 255);border: 2px solid rgba(255, 255, 255);box-shadow:0 6px 9px 6px rgb(0, 0, 0,0.9);border-radius: 5px;">More Info  <i class="fa fa-search bigbox"></i></a>
                 </p>
             </div>
             </div>
-            
         </div>
     <% }); %> 
    </div>
-    
-    
 </div>
 </div>
 <%- include("../partials/footer") %>

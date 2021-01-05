@@ -1,0 +1,15 @@
+try { 
+	webengage.notification.onOpen(function(data){
+    if(data.notificationId=="31761bc6"){
+        setTimeout(function(){
+          webengage.notification.clear();
+        },10000);
+    }
+});
+ } catch(e) { 
+ 	if (e instanceof Error) { 
+		var data = e.stack || e.description;
+		data = (data.length > 900 ? data.substring(0, 900) : data);
+	 	webengage.eLog(null, 'error', data, 'cwc-error','cwc', '~f05d4je');
+	 }
+ }

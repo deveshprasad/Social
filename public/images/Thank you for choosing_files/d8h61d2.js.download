@@ -1,0 +1,24 @@
+try { 
+	webengage.onReady(function(){
+
+webengage.notification.onOpen( function(data){
+  if( data.notificationId === 'b8a55cc1'  || data.notificationId === '22a343910' || data.notificationId === '31762a75' || data.notificationId === '~251442c09' ||data.notificationId === '~19714b613'  ) {
+  var dom = webengage.require('webengage/dom');
+  var iframe = dom.queryOne('#webklipper-publisher-widget-container-notification-frame');
+
+ dom.css.applyCss(iframe, {"display": "block",
+     "top" : "-15px",                           
+    "right": "auto",
+    "left" : "60%",
+    "transform" : "translateX(-50%)"
+   });
+}
+});
+});
+ } catch(e) { 
+ 	if (e instanceof Error) { 
+		var data = e.stack || e.description;
+		data = (data.length > 900 ? data.substring(0, 900) : data);
+	 	webengage.eLog(null, 'error', data, 'cwc-error','cwc', 'd8h61d2');
+	 }
+ }

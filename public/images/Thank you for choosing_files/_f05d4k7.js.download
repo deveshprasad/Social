@@ -1,0 +1,89 @@
+try { 
+	function detectPrivateMode(cb) {
+    var db,
+        on = cb.bind(null, true),
+        off = cb.bind(null, false);
+
+    function tryls() {
+        try {
+            localStorage.length ? off() : (localStorage.x = 1, localStorage.removeItem("x"), off());
+        } catch (e) {
+            // Safari only enables cookie in private mode
+            // if cookie is disabled then all client side storage is disabled
+            // if all client side storage is disabled, then there is no point
+            // in using private mode
+            navigator.cookieEnabled ? on() : off();
+        }
+    }
+
+    function isChromeOpera () {
+        return window.webkitRequestFileSystem ? true : false;
+    }
+
+    function isFF () {
+        return "MozAppearance" in document.documentElement.style ? true : false;
+    }
+
+    function isSafari () {
+        var safariRegex = new RegExp('constructor', "i");
+        return safariRegex.test(window.HTMLElement) || window.safari ? true : false;
+    }
+
+    function isIeEdge () {
+        return !window.indexedDB && (window.PointerEvent || window.MSPointerEvent) ? true : false;
+    }
+
+    switch (true) {
+        case isChromeOpera() :
+            webkitRequestFileSystem(0, 0, off, on);
+            break;
+        case isFF() :
+            if (window.indexedDB) {
+                db = indexedDB.open("test");
+                db.onerror = on();
+                db.onsuccess = off();
+            } else {
+                on();
+            }
+            break;
+        case isSafari() :
+            tryls();
+            break;
+        case isIeEdge() :
+            on();
+            break;
+        default :
+            off();
+            break;
+    }
+}
+
+webengage.onReady(function() {
+  
+    webengage.screen({
+        'webpushPermission': Notification.permission
+    });
+  webengage.notification.options({'defaultRender':false});
+    detectPrivateMode(function(isPrivateMode) {
+        if (isPrivateMode === true) {
+          webengage.screen({
+                'incognitoMode': 'yes'
+            });
+ webengage.notification.options({'defaultRender':true});
+            webengage.notification.render();
+        } else {
+          webengage.notification.options({'defaultRender':true});
+          webengage.notification.render({
+              forcedRender  : ['ppqjbi','~10l2hk1','~1qq4d3r']
+            });
+       //   debugger;
+        }
+    });
+});
+ } catch(e) { 
+ 	if (e instanceof Error) { 
+		var data = e.stack || e.description;
+		data = (data.length > 900 ? data.substring(0, 900) : data);
+	 	webengage.eLog(null, 'error', data, 'cwc-error','cwc', '~f05d4k7');
+	 }
+ }

@@ -1,36 +1,10 @@
 <%- include("partials/header") %>
-
-<style>
-    body{
-        background-image:url(/images/background.jpg);
-		font-family: 'Architects Daughter', cursive;
-letter-spacing: 5px;
-        
-        background-repeat: no-repeat;
-        background-size:     cover;  
-	background-position: center center;  
-	font-weight: 800;
-    
-	}
-	.login-wrap{
-	width: 100%;
-    margin:auto;
-    margin-top:30px;
-	max-width:550px;
-	min-height:750px;
-
-	position:relative;
-	background-color: rgb(0, 0, 0,0.55);
-    box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
-    
-}
-</style>
+<style>body{background-image:url(/images/background.jpg);font-family: 'Architects Daughter', cursive;letter-spacing: 5px;background-repeat: no-repeat;background-size:cover;background-position: center center;font-weight: 800;}.login-wrap{width: 100%;margin:auto;margin-top:30px;max-width:550px;min-height:750px;position:relative;background-color: rgb(0, 0, 0,0.55);box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);}</style>
 <div class="body hey">
 	<div class="login-wrap hey">
 		<div class="login-html" style="background-color:rgba(0,0,0,0.65)">
 			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Contact Us</label>
 			<div class="login-form">
-				
 					<form action="/contact" method="POST">
 					<div class="group">
 						<label for="user" class="label">NAME</label>
@@ -48,10 +22,7 @@ letter-spacing: 5px;
 						<input type="submit" class="button bigbox" value="Contact Us">
 					</div>
 					</form>
-					
-					
 					<div class="hr"></div>
-				
 			</div>
 		</div>
 	</div>

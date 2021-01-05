@@ -1,0 +1,197 @@
+.fsl_sprite {
+  background-image: url(/images/v2/flight/side-seats.gif);
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 17px;
+  background-position: top left;
+  margin: 2px 0;
+}
+.fsl_wrap {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 850px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-box-shadow: 2px 2px 5px #888;
+  -webkit-box-shadow: 2px 2px 5px #888;
+  box-shadow: 2px 2px 5px #888;
+  padding: 20px;
+  font-family: arial
+}
+.fsl_wrap1 {
+  width:70%;
+  overflow: scroll;
+}
+.fsl_wrap2 {
+  overflow: hidden;
+  width: 70%;
+  padding-left: 30%;
+  background-color: #efefef;
+  border-radius: 5px;
+}
+.fsl_wrap2 div{
+  padding-right: 10px;
+}
+.flt_sttxt{
+  float: left;
+  padding-left: 6px;
+  padding-top: 3px;
+}
+.fsl_rw{
+  overflow: hidden;
+  width: 25px;
+  float: left;
+  display: block;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.fsl_vacant{
+  background-position: 0px 0;
+  float: left;
+  cursor: pointer;
+}
+span.fsl_vacant:hover{
+  cursor: pointer;
+}
+.fsl_vacant.legend, .fsl_vacant.legend:hover {
+  cursor: default !important;
+}
+.fsl_booked, .fsl_open {
+  background-position: 0 -96px;
+  float:left;
+}
+.fsl_sel {
+  background-position:0 -48px;
+}
+.fsl_selected {
+  background-position: 0 -48px;
+}
+.fsl_lbl {
+  background-position: 0 -223px;
+  float: left;
+  font-weight: bold;
+}
+#fsl_seats {
+  font-size:20px;
+}
+#fsl_msg {
+  color:red;
+}
+.fsl_txt, .fsl_col {
+  font-weight:bold;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  color:#777;
+  margin-bottom: 15px;
+  padding: 0;
+  width: 23px;
+  height: 16px;
+  display: block;
+  margin: 0 auto 15px auto;
+  text-align: left;
+}
+.fsl_col {
+  margin-bottom: 0;
+}
+.fsl_cor {
+  background: none;
+}
+.fsl_way {
+  margin-top: 20px;
+}
+.fsl_hd {
+  padding-left: 10px;
+}
+.fsl_ss{
+  overflow: hidden;
+  font-size: 12px;
+  padding: 5px 0;
+}
+.fsl_bs{
+  overflow: hidden;
+  font-size: 12px;
+  padding: 5px 0;
+}
+.fsl_rule{
+  height: 600px;
+}
+.fsl_rule h1{
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+.fsl_rule h1 span{
+  float: right;
+  font-size: 11px;
+}
+table.fl_farecal{
+  width:100%;
+}
+table.fl_farecal td{
+  padding: 5px;
+  border: 1px solid #999999;
+}
+.ui-dialog .ui-dialog-content{
+  padding-top: 0px !important;
+}
+.fsl_rule h1{
+  font-size: 28px;
+  text-align: center;
+  font-weight: normal;
+}
+.fsl_rule p{
+  padding-bottom: 10px;
+  color: #999;
+  line-height: 110%;
+}
+.fsl-wrap1{
+  padding-bottom: 10px;
+}
+.fsl_wrap1::-webkit-scrollbar { width: 12px; } 
+.fsl_wrap1::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+.fsl_wrap1::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+.stnopss{float: left; width: 30%;}
+.headloc{font-size: 22px; font-weight: bold;}
+.headloc_cnt{font-size: 12px; padding: 10px 0;}
+.st_type{font-size: 11px; color: #838383; padding: 5px 0 15px;}
+.st_stno{color: #9e9e9e; overflow: hidden; padding-bottom: 5px;}
+.st_no_namewrp{overflow: hidden;}
+.flt_errst{float: right; width: 50%;}
+.st_nocnt{
+  float: left;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 5px 2px;
+  font-weight: bold;
+}
+.st_nocntnm{
+  color: #3c6dbc;
+  font-size: 15px;
+  float: left;
+  padding: 5px 0 0 3px;
+  padding-right: 5px;
+}
+.st_loc{font-size: 16px; font-weight: bold;}
+.flt_destwrp{overflow: hidden;}
+.flt_destclss{float: left; width: 50%;}
+.seat-request{background-position: -123px -415px;}
+
+.flight-seat-req.modal {
+  font-style: italic;
+  color: #2762B0;
+}
+
+.no-close .ui-dialog-titlebar-close {
+display: none;
+}
