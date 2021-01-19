@@ -21,7 +21,31 @@ router.get("/",(req,res)=>{
   res.render("contact");
 });
 
- 
+
+router.get("/auth/google",
+passport.authenticate("google",{scope:["profile"]})
+
+);
+
+router.get('/auth/google/secrets', 
+  passport.authenticate('google',{ failureRedirect: '/login' }),
+
+
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/socials');
+  }
+  
+  );
+
+//   function onSignIn(googleUser) {
+//     var profile = googleUser.getBasicProfile();
+//     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+//     console.log('Name: ' + profile.getName());
+//     console.log('Image URL: ' + profile.getImageUrl());
+//     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+//   }
+//  onSignIn();
  /////////////////////////////AUTH ROUTES
  ///////SHOW REGISTER
  router.get("/register",(req,res)=>{

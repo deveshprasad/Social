@@ -36,7 +36,7 @@
               </li>
           <% } else { %>
               <li class="nav-item">
-                <a href="" class="nav-link">Hey ! <%= currentUser.firstName %> <i class="fa fa-user"></i></a>
+                <a href="" class="nav-link">Hey ! <%= currentUser.firstName || currentUser.googlefirstName %> <i class="fa fa-user"></i></a>
               </li>
               <li class="nav-item">
                 <a href="/logout" class="nav-link"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>

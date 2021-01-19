@@ -12,6 +12,8 @@ const Comment =require("./models/comment");
 const User =require("./models/user");
 // const seedDB=require("./seeds");
 const expressSanitizer = require('express-sanitizer');
+const  GoogleStrategy = require('passport-google-oauth20').Strategy;
+const findOrCreate=require("mongoose-findorcreate");
 const commentRoutes=require("./routes/comments"),
 socialRoutes=require("./routes/socials"),
 indexRoutes=require("./routes/index");
@@ -39,8 +41,31 @@ app.use(require("express-session")({
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+// 
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+  });
+  
+  passport.deserializeUser(function(id, done) {
+    User.findById(id, function(err, user) {
+      done(err, user);
+    });
+  });
+
+passport.use(new GoogleStrategy({
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    callbackURL: "http://localhost:3000/auth/google/secrets",
+    userProfileURL:"https://www.googleapis.com/oauth2/v3/userinfo"
+
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    console.log(profile);
+    User.findOrCreate({ googleId: profile.id,googleemail:profile.email,googlefirstName:profile.given_name,googlelastName:profile.family_name,googleavatar:profile.picture }, function (err, user) {
+      return cb(err, user);
+    });
+  }
+));
 
 app.use(function(req,res,next){
 res.locals.currentUser=req.user;
