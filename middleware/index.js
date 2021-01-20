@@ -41,14 +41,14 @@ middlewareObj.checkCommentOwnership=function(req,res,next){
             /// is ownwer
             Comment.findById(req.params.comment_id,(err,foundComment)=>{
                 if(err||!foundComment){
-                    req.flash("error","Comment NOT found");
+                    req.flash("error","Comment NOT found ! Please Try Again Later");
                     res.redirect("back");
                 }else{
                     if(foundComment.author.id.equals(req.user._id)||req.user.isAdmin){
                         next();
                         
                     }else{
-                        req.flash("error","Come on you dont have permission");
+                        req.flash("error","Come on you dont have permission!");
                         res.redirect("back");
                     }
                     
@@ -56,7 +56,7 @@ middlewareObj.checkCommentOwnership=function(req,res,next){
                 } 
             });
         }else{
-            req.flash("error","Please Login First ");
+            req.flash("error","Please Login First !");
            res.redirect("back");
         }
         ///reedirect
@@ -72,7 +72,7 @@ middlewareObj.isLoggedIn=function isLoggedIn(req,res,next){
     if(req.isAuthenticated()){
         return next();
     }
-    req.flash("error","Please login first ");
+    req.flash("error","Please login first !");
     res.redirect("/login");
 }
 

@@ -225,10 +225,6 @@ a{color:inherit;text-decoration:none}
 	}
 }
 
-.fa:hover{
-	animation: full-circle 1.1s ease-out;
-	font-size: 1.5rem;
-}
 .btn:hover{
 	background-color: #fff;
 	color: black;

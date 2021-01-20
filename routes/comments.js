@@ -21,7 +21,7 @@ router.post("/",middleware.isLoggedIn,(req,res)=>{
 // look social uisng id
 social.findById(req.params.id,(err,social)=>{
   if(err){
-    req.flash("error","Something went wrong ! Please Refresh or Try Again ");
+    req.flash("error","Something Went Wrong ! Please Refresh Or Try Again ");
       console.log(error);
      
   }else{
@@ -51,7 +51,7 @@ router.get("/:comment_id/edit",middleware.checkCommentOwnership,(req,res)=>{
     social.findById(req.params.id,(err,foundsocial)=>{
        
         if(err||!foundsocial){
-            req.flash("error","Sorry! Cannot find it please delete it and add a new one");
+            req.flash("error","Sorry! Cannot Find It ! Please Delete It And Add A New One");
             console.log(err);
             return res.redirect("back");
         }
@@ -80,7 +80,7 @@ router.delete("/:comment_id",middleware.checkCommentOwnership ,(req,res)=>{
         if(err){
             res.redirect("back");
         }else{
-            req.flash("success","Comment Deleted");
+            req.flash("success","Comment Deleted ! PLease Refresh If Not Visible");
           res.redirect("/socials/"+req.params.id);
         
         }

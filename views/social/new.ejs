@@ -1,5 +1,5 @@
 <%- include("../partials/header") %>
-<style>body{background-image: url(/images/background.jpg);font-family: 'Architects Daughter', cursive;letter-spacing:3px;color:white;}</style>
+<style>body{background-image: url(/images/background.jpg);font-weight: 800;font-family: 'Architects Daughter', cursive;letter-spacing:3px;color:white;}</style>
 <div class="container hey" style="border: 1px solid rgba(255, 255, 255);box-shadow:0 6px 9px 6px rgb(0, 0, 0,0.9);">
     <div class="row" style="background-color: rgba(0,0,0,0.55);color:white;">
         <div class="col-lg-12">
@@ -7,24 +7,25 @@
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12">
         <div style="width: 100%;margin: 30px auto;">
-        <form action="/socials" method="post">
+        <form action="/socials" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label style="font-size:2rem;" for="" class="label">Name :</label>
-                <input class="form-control" type="text" name="name" placeholder="name" >
+                <input class="form-control" type="text" name="social[name]" placeholder="name" >
                 
             </div>
             <div class="form-group">
                 <label style="font-size:2rem;" for="" class="label">Price ($) :</label>
-                <input class="form-control" type="number" name="price" placeholder="price" min="0.01" step="0.01" >
+                <input class="form-control" type="number" name="social[price]" placeholder="price" min="0.01" step="0.01" >
                 
             </div>
-            <div class="form-group">
-                <label style="font-size:2rem;" for="" class="label">Image (URL link) :</label>
-                <input class="form-control" type="text" name="image" placeholder="img url" >     
+            <div class="form-group" style="cursor: pointer">
+                <label style="font-size:2rem;" for="" class="label">Image :</label>
+                <input type="file" id="image" name="image" accept="image/*" required style="background-color:black;color:white;font-weight:800;font-size:1.5rem;cursor:pointer;border:1px solid white">
+                <!-- <input class="form-control" type="text" name="image" placeholder="img url" >      -->
             </div>
             <div class="form-group">
                 <label style="font-size:2rem;" for="" class="label">Description :</label> 
-                <input class="form-control" type="text" name="description" placeholder="describe it please" >     
+                <input class="form-control" type="text" name="social[description]" placeholder="Describe It Please" >     
             </div>
             <div class="form-group">
                 <button class="btn btn-lg bigbox btn-block" style="background-color: #000000;color: rgb(255, 255, 255);border: 2px solid rgba(255, 255, 255);box-shadow:0 6px 9px 6px rgb(0, 0, 0,0.9);border-radius: 5px;">Submit</button>

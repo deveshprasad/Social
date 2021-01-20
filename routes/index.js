@@ -21,6 +21,10 @@ router.get("/",(req,res)=>{
   res.render("contact");
 });
 
+router.get("/documentation",(req,res)=>{
+  res.render("documentation");
+});
+
 
 router.get("/auth/google",
 passport.authenticate("google",{scope:["profile"]})
