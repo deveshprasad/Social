@@ -31,7 +31,7 @@ a{color:inherit;text-decoration:none}
 	width:100%;
 	height:100%;
 	position:absolute;
-	padding:90px 70px 50px 70px;
+	padding:50px 50px 50px 50px;
 	background:rgba(0,0,0,0.5);
 }
 .login-html .sign-in-htm,
@@ -95,8 +95,8 @@ a{color:inherit;text-decoration:none}
 	padding:15px 20px;
 	border-radius:25px;
 	background:rgba(255,255,255,.1);
-	font-weight: 800;
-	letter-spacing: 5px;
+	font-weight: 600;
+	letter-spacing: 3px;
 }
 .login-form .group input[data-type="password"]{
 	-text-security:circle;
@@ -105,11 +105,11 @@ a{color:inherit;text-decoration:none}
 .login-form .group .label{
 	color:rgb(219, 212, 212);
 	font-size:12px;
-	letter-spacing: 5px;
+	letter-spacing: 3px;
 }
 .login-form .group .button{
 	background:#1161ee;
-	font-weight: 800;
+	font-weight: 600;
 }
 .login-form .group .button2{
 	background:#ffee00;
@@ -117,7 +117,7 @@ a{color:inherit;text-decoration:none}
 	padding:15px 20px;
 	border-radius:25px;
 	width:100%;
-    font-weight: 800;
+    font-weight: 600;
 	display:block;
 
 }
@@ -239,3 +239,4 @@ nav a:hover{
 	background-color:black;
 
 }
+body{font-family: 'Architects Daughter', cursive;}

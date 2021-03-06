@@ -17,11 +17,11 @@ router.get("/",(req,res)=>{
  
  
  ///////////////////////////// contact 
- router.get("/contact",(req,res)=>{
-  res.render("contact");
-});
+//  router.get("/contact",(req,res)=>{
+//   res.render("contact");
+// });
 
-router.get("/documentation",(req,res)=>{
+router.get("/documentation",middleware.isLoggedIn,(req,res)=>{
   res.render("documentation");
 });
 

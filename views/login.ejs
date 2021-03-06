@@ -1,41 +1,42 @@
 <%- include("partials/header") %>
-<style>body{background-image:url(/images/background.jpg);font-family: 'Architects Daughter', cursive;letter-spacing:5px;background-repeat: no-repeat;background-size:cover;background-position:center center;font-weight: 800;}.login-wrap{width: 100%;margin:auto;margin-top:50px;max-width:550px;min-height:600px;position:relative;background-color: rgb(0, 0, 0,0.55);box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);}.google{width:40%;margin-bottom:10px;}</style>
+<style>body{background-image:url(/images/background.jpg);font-family: 'Architects Daughter', cursive;letter-spacing:3px;background-repeat: no-repeat;background-size:cover;background-position:center center;font-weight: 800;}.login-wrap{width: 100%;margin:auto;margin-top:50px;max-width:550px;min-height:550px;position:relative;background-color: rgb(0, 0, 0,0.55);box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);}.google{width:30%;margin-bottom:20px;}</style>
 <div class="body hey">
 	<div class="login-wrap hey">
 		<div class="login-html" style="background-color:rgba(0,0,0,0.65)">
-			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab" style="color:white">Sign In</label>
 			<input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab" style="color:white">Other Options</label>
 			<div class="login-form">
-				<div class="sign-in-htm">
+				<div class="sign-in-htm my-4">
 					<form action="/login" method="POST">
-					<div class="group">
+					<div class="group my-2">
 						<label for="user" class="label">Username or Email</label>
 						<input id="user" name="username" type="text" class="input" placeholder="Username or Email">
 					</div>
-					<div class="group">
+					<div class="group my-2">
 						<label for="pass" class="label">Password</label>
 						<input id="pass" name="password" type="password" class="input" data-type="password" placeholder="Password">
 					</div>
-					<div class="group">
+					<div class="group my-4">
 						<input type="submit" class="button bigbox" value="Sign In">
 					</div>
 					</form>
-					<div class="group">
+					<div class="group my-4">
 						<a href="/forgot" style="text-decoration: none;"><input type="submit" class="button2 bigbox" value="Forgot Password"></a>
 					</div>
 					<div class="hr" style="margin-top:70px"></div>
 				</div>
 				<div class="for-pwd-htm">
-					<div class="group" style="text-align: center;margin-top:10px">
-						<label for="user" class="label">Log In Using Google Account</label>
-						<img class="google full-circle" src="/images/google.svg" />
-					</div>
-					<div class="group">
+					<div class="group" style="text-align: center;">
+						<label for="user" class="label" style="text-align:center;margin:15px auto;font-size: 1.1rem;">Log In Using Google Account</label>
 						<a href="/auth/google" role="button" style="text-decoration:none">
-						<input type="submit" class="button bigbox" value="Login Using G-Mail Account">
+							<img class="google full-circle" src="/images/google.svg" />
 					    </a>
+						
 					</div>
-					<p style="color: white;">Preferred to create a account using normal sign up method to add your description and profile pic of your choice for your Socials account.</p>
+					<div class="" style="text-align:center">
+					<p style="color: white;">Preferred to create a account using normal sign up method to add your description and profile pic of your choice for your Socials account. <br>For queries contact the below account : <br>
+						ddddevesh2001@gmail.com <br> deveshprasad577@yahoo.com <br> deveshprasad99911@gmail.com</p>
+					</div>
 					<div class="hr"></div>
 				</div>
 			</div>

@@ -1,13 +1,13 @@
 <%- include("partials/header") %>
-<style>body{background-image:url(/images/background.jpg);font-family: 'Architects Daughter', cursive;letter-spacing: 5px;font-weight: 800;background-size: cover;background-position: center center;}.google{width:40%;margin-bottom:20px;}.login-wrap{width: 100%;margin:auto;margin-top:50px;max-width:550px;min-height:1000px;position:relative;background-color: rgb(0, 0, 0,0.55);box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);}</style>
+<style>body{background-image:url(/images/background.jpg);font-family: 'Architects Daughter', cursive;letter-spacing: 3px;font-weight: 600;background-size: cover;background-position: center center;}.google{width:40%;margin-bottom:20px;}.login-wrap{width: 100%;margin:auto;margin-top:50px;max-width:550px;min-height:1000px;position:relative;background-color: rgb(0, 0, 0,0.55);box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);}</style>
 <div class="body hey">
 	<div class="login-wrap hey" >
 		<div class="login-html" style="background-color:rgba(0,0,0,0.65)">
-			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign Up</label>
+			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab" style="color:white">Sign Up</label>
 			<input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" style="color:white"  class="tab">Other Options</label>
 			<div class="login-form">
 			<form action="/register" method="POST">
-				<div class="sign-in-htm">
+				<div class="sign-in-htm my-2">
 					<div class="group">
 						<label for="user" class="label">Username or Email</label>
 						<input id="user" name="username" type="text" class="input" placeholder="Username">
@@ -48,19 +48,21 @@
 				</div>
 			</form>
 				<div class="for-pwd-htm">
-					<div class="group" style="text-align:center;margin-top:50px">
-						<label for="user" class="label">Sign Up Using Your GMail Account</label>
-						<img class="google full-circle" src="/images/google.svg" />
-					</div>
-					<div class="group">
+					<div class="group" style="text-align:center;margin:20px auto;">
+						<label for="user" class="label" style="text-align:center;margin:20px auto;font-size: 1.5rem;">Sign Up Using Your GMail Account</label>
 						<a href="/auth/google" role="button" style="text-decoration: none;">
-						<input type="submit" class="button bigbox" value="Register Using GMail Account">
-					</a>
+							<img class="google full-circle" src="/images/google.svg" />						
+						</a>
+	
+
 					</div>
 					<div class="hr"></div>
-					<p style="color: white;">Preferred to create a account using normal sign up method to add your description and profile pic of your choice for your Socials account. Gmail works but you will be seen as an anonymous user.(still be able to add post and comments on others)
-					Use the normal Sign Up method and add your gmail account there in the email portal.<br>(Use gmail login only if you wannna be anonymous and add post or comments or use the normal sign up method)<br>For queries contact the below account : <br>
-				ddddevesh2001@gmail.com <br> deveshprasad577@yahoo.com <br> deveshprasad99911@gmail.com</p>
+					<div class="" style="text-align: center;">
+						<p style="color: white;"><br><br>Preferred to create a account using normal sign up method to add your description and profile pic of your choice for your Socials account. Gmail works but you will be seen as an anonymous user.(still be able to add post and comments on others)
+							Use the normal Sign Up method and add your gmail account there in the email portal.<br><br><br>(Use gmail login only if you wannna be anonymous and add post or comments or use the normal sign up method)<br><br>For queries contact the below account : <br>
+						ddddevesh2001@gmail.com <br> deveshprasad577@yahoo.com <br> deveshprasad99911@gmail.com</p>
+					</div>
+					
 				</div>
 			
 			</div>
