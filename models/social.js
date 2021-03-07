@@ -1,5 +1,4 @@
 const mongoose=require("mongoose");
-
 const socialSchema =new mongoose.Schema({
     name:String,
     price:String,
@@ -7,21 +6,7 @@ const socialSchema =new mongoose.Schema({
     imageId: String,
     description:String,
     createdAt: { type: Date, default: Date.now },
-    author:{
-        id:{
-           type :mongoose.Schema.Types.ObjectId,
-        ref:"User"
-        },
-        username:String
-    },
-    comments:[
-        {
-            type:mongoose.Schema.Types.ObjectId,
-            ref:"Comment"
-        }
-    ]
-   });
-   
-   
+    author:{id:{type :mongoose.Schema.Types.ObjectId,ref:"User"},username:String},
+    comments:[{type:mongoose.Schema.Types.ObjectId,ref:"Comment"}]});
 module.exports=mongoose.model("social",socialSchema);
    
