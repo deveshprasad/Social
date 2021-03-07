@@ -10,6 +10,34 @@ const middleware=require("../middleware");
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.sendgrid_api_key);
 
+var { promisify } = require('util');
+var sizeOf = promisify(require('image-size'));
+
+var multer = require('multer');
+var storage = multer.diskStorage({
+  filename: function(req, file, callback) {
+    callback(null, Date.now() + file.originalname);
+  }
+});
+
+var imageFilter = function(req, file, cb) {
+  // accept image files only
+  if (!file.originalname.match(/\.(jpg|jpeg|png)$/i)) {
+    // req.flash("error","sorry only jpg | jpeg | png allow");
+    //res.redirect("/campgrounds");
+    return cb(new Error('Only image files are allowed!'), false);
+  }
+  cb(null, true);
+};
+// var upload = multer({ storage: storage, fileFilter: imageFilter })
+var upload = multer({ storage: storage, fileFilter: imageFilter })
+
+var cloudinary = require('cloudinary');
+cloudinary.config({
+  cloud_name: 'dcsgaregd',
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
 
 router.get("/",(req,res)=>{
     res.render("landing");
@@ -55,31 +83,82 @@ router.get('/auth/google/secrets',
  router.get("/register",(req,res)=>{
    res.render("register");
  });
- router.post('/register',(req,res)=>{
- var newUser= new User({
-     username:req.body.username,
-     firstName:req.body.firstName,
-     lastName:req.body.lastName,
-     email:req.body.email,
-     description:req.body.description,
-     avatar:req.body.avatar
-    });
-  //eval(require("locus"))
-  if(req.body.adminCode===process.env.adminCode){
-      newUser.isAdmin=true;
+ router.post("/register", upload.single('avatar'), function(req, res) {
+  // var imgWH = [];
+  // imgWH = await sizeOf(req.file.path);
+  // if (imgWH.width < imgWH.height || req.file.size > 5e+6) {
+  //   req.flash("error", "Please upload only landscape image or image size should be less than 5MB");
+  //   res.redirect("back");
+  // }
+  // else {
+   cloudinary.v2.uploader.upload(req.file.path,function(err,result){
+    if(err) {
+      req.flash('error', err.message);
+      return res.redirect('back');
+    }
+    req.body.avatar = result.secure_url;
+      // add image's public_id to campground object
+      req.body.avatarId = result.public_id;
+  
+      var newUser = new User({
+        username: req.body.username,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        avatar: result.secure_url,
+        avatarId: result.public_id,
+        description: req.body.description
+      })
+  
+
+      if(req.body.adminCode===process.env.adminCode){
+               newUser.isAdmin=true;
+         }
+  
+      User.register(newUser, req.body.password, function(err, user) {
+        if (err) {
+          console.log(err);
+          // req.flash("error", err.message);
+          return res.render("register", { "error": err.message + " Email Already Exists !" });
+        }
+        else {
+          passport.authenticate("local")(req, res, function() {
+            console.log(req.body.username);
+            req.flash("success", "Welcome to Socials ! " + user.firstName);
+            return res.redirect("/socials");
+          })
+        }
+      })
+  
+   });
+   
   }
- User.register(newUser,req.body.password,(err,user)=>{
-     if(err){
-        // console.log(err);
-         req.flash("error",err.message);
-         return res.render("register");
-     }
-     passport.authenticate("local")(req,res,()=>{
-         req.flash("success","Welcome! "+user.firstName+" Enjoy!");
-     res.redirect("/socials");
-     });
- });
- });
+)
+//  router.post('/register',(req,res)=>{
+//  var newUser= new User({
+//      username:req.body.username,
+//      firstName:req.body.firstName,
+//      lastName:req.body.lastName,
+//      email:req.body.email,
+//      description:req.body.description,
+//      avatar:req.body.avatar
+//     });
+//   //eval(require("locus"))
+//   if(req.body.adminCode===process.env.adminCode){
+//       newUser.isAdmin=true;
+//   }
+//  User.register(newUser,req.body.password,(err,user)=>{
+//      if(err){
+//         // console.log(err);
+//          req.flash("error",err.message);
+//          return res.render("register");
+//      }
+//      passport.authenticate("local")(req,res,()=>{
+//          req.flash("success","Welcome! "+user.firstName+" Enjoy!");
+//      res.redirect("/socials");
+//      });
+//  });
+//  });
  
  ////////////////////////LOGIN FORM
  router.get("/login",(req,res)=>{
