@@ -1,19 +1,23 @@
 <%- include("partials/header") %>
 <style>body{background-image: url(/images/background.jpg);font-family: 'Architects Daughter', cursive;letter-spacing: 3px;color:white;background-size:cover;background-position: center center;}</style>
-<div class="container hey">
-	<div class="row" style="background-color: rgba(0,0,0,0.75);color:white;margin: 12% auto;">
+<div class="container  hey">
+	<div class="row" style="background-color: rgba(0,0,0,0.75);color:white;margin: 8% auto 15% auto;">
 		<div class="col-md-12">
 			<form action="/forgot" method="POST">
-				<div class="" style="text-align: center;">
-                	<legend style="font-size: 3.5rem;color:white">Forgot Password</legend>
+				<div class="my-2" style="text-align: center;">
+                	<legend style="font-size: 3rem;color:white">Forgot Password</legend>
 				</div>
-				<div class="form-group">
+				<div class="form-group my-4">
 					<label style="font-size: 2.5rem;" for="email">Email</label>
 					<input type="email" name="email" autofocus class="form-control" placeholder="EMAIL">
 				</div>
-				<div class="form-group">
+				<div class="form-group my-4 px-5">
 					<input type="submit" class="btn btn-lg bigbox btn-block" style="background-color: #000000;color: rgb(255, 255, 255);border: 2px solid rgba(255, 255, 255);box-shadow:0 6px 9px 6px rgb(0, 0, 0,0.9);border-radius: 5px;" value="RESET PASSWORD">
 				</div>
+				<div class="text-align:center px-2">
+					<h3>Check your spam folder if the mail is not visible in your inbox.</h3>
+				</div>
+
 			</form>
 		</div>
 	</div>
