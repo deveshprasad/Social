@@ -276,7 +276,7 @@ body{font-family: 'Architects Daughter', cursive;}
     opacity: 0;
     z-index: 0;
     animation: imageAnimation 25s linear infinite; 
-    filter: blur(6px);
+    filter: blur(8px);
   }
 
   .slideshow li:nth-child(1) { 

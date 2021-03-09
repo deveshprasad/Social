@@ -1,24 +1,28 @@
 <%- include("partials/header") %>
-<style>body{background-image: url(/images/background.jpg);font-family: 'Architects Daughter', cursive;letter-spacing: 3px;color:white;background-size:cover;background-position: center center;font-weight:800;}</style>
-<div class="container hey">
-	<div class="row" style="background-color: rgba(0,0,0,0.75);color:white;margin: 12% auto;">
-		<div class="col-md-12">
-			<form action="/reset/<%= token %>" method="POST">
-				<div class="" style="text-align: center;">
-					<legend style="font-size: 2.5rem;color:white">Reset Password</legend>
-				</div>
-			  <div class="form-group my-4">
-				<label style="font-size: 1.6rem;color:white" for="password">New Password (Please a strong one with numbers, special characters, etc.)</label>
-				<input type="password" name="password" value="" placeholder="NEW PASSWORD" autofocus="autofocus" class="form-control" style="color:black" />
-			  </div>
-			  <div class="form-group my-4">
-				<label style="font-size: 1.6rem;color:white" for="confirm">Confirm Password</label>
-				<input type="password" name="confirm" value="" placeholder="CONFIRM PASSWORD" class="form-control"/>
-			  </div>
-			  <div class="form-group px-5">
-				<button type="submit" class="btn btn-lg bigbox btn-block butt">Update Password</button>
-			  </div>
-			</form>
+<style>body{background-image: url(/images/background.jpg);font-family: 'Architects Daughter', cursive;letter-spacing: 3px;color:white;background-size:cover;background-position: center center;font-weight:800;}.login-wrap{width: 100%;margin:auto;margin-top:30px;max-width:550px;min-height:550px;position:relative;background-color: rgb(0, 0, 0,0.55);box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);}</style>
+<div class="body hey">
+	<div class="login-wrap hey">
+		<div class="login-html" style="background-color:rgba(0,0,0,0.65)">
+			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Reset Password</label>
+			<div class="login-form my-4">
+					<form action="/reset/<%= token %>" method="POST">
+                    <div class="group my-4">
+						<label style="font-size: 1.2rem;color:white" for="password">New Password (Please a strong one with numbers, special characters.)</label>
+						<input type="password" name="password" value="" placeholder="NEW PASSWORD" autofocus="autofocus" class="input"  />
+					</div>
+                    <div class="group my-4">
+						<label style="font-size: 1.2rem;color:white" for="confirm">Confirm Password</label>
+						<input type="password" name="confirm" value="" placeholder="CONFIRM PASSWORD" class="input"/>
+					</div>
+					<div class="group my-4 px-5">
+						<button type="submit" class="btn btn-lg bigbox btn-block butt">Update Password</button>
+					  </div>
+					  <div class="group my-2 px-5">
+						<a href="/login" style="text-decoration: none;"><input type="" class="button2 bigbox" value="Already Have an Account ! Sign In"></a>
+					</div>
+					</form>
+					<div class="hr"></div>
+			</div>
 		</div>
 	</div>
 </div>
