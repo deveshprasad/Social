@@ -347,3 +347,8 @@ hr:hover {
 .butt{
 	background-color: #000000;color: rgb(255, 255, 255);border: 2px solid rgba(255, 255, 255);box-shadow:0 6px 9px 6px rgb(0, 0, 0,0.9);border-radius: 5px;margin:5px;font-weight:800
 }
+.animate-top{position:relative;animation:animatetop 0.5s}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+.animate-left{position:relative;animation:animateleft 1.5s}@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+.animate-right{position:relative;animation:animateright 1.5s}@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+.animate-bottom{position:relative;animation:animatebottom 0.5s}@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
+.animate-zoom {animation:animatezoom 1.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
