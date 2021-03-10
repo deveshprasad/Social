@@ -29,7 +29,7 @@ router.get("/",(req,res)=>{res.render("landing");});
 //////////////////////////////////////////////////////////// Documentation Page
 router.get("/documentation",middleware.isLoggedIn,(req,res)=>{res.render("documentation");});
 /////////////////////////////////////////////////////////////////////////////////////Google Authentication
-router.get("/auth/google",passport.authenticate("google",{scope:["profile"]}));
+router.get("/auth/google",passport.authenticate("google",{scope:["email"]}));
 router.get('/auth/google/secrets', passport.authenticate('google',{ failureRedirect: '/login' }),
 function(req, res) {res.redirect('/socials');});
 //////////////////////////////////////////////////////////////////// Sign Up Page

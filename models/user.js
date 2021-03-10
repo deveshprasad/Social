@@ -2,13 +2,13 @@ const mongoose=require("mongoose");
 const passportLocalMongoose=require("passport-local-mongoose");
 const findOrCreate=require("mongoose-findorcreate");
 const UserSchema=mongoose.Schema({
-    username:{type:String,unique:true,required:true},
+    username:{type:String,unique:true},
     password:String,
     avatar:String,
     avatarId:String,
     firstName:String,
     lastName:String,
-    email:{type:String,unique:true,required:true},
+    email:{type:String,unique:true},
     description:String,
     resetPasswordToken:String,
     resetPasswordExpires:Date,
