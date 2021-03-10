@@ -94,15 +94,15 @@ router.post('/forgot', function(req, res, next) {
         var mailOptions = {
           to: user.email,
           from: 'ddddevesh2001@gmail.com',
-          subject: 'Socials Password Reset',
-          text: 'You are receiving this because you have requested the reset of the password for your account.\n\n' +
+          subject: 'Socials Password Reset Request',
+          text: 'You are receiving this because you have requested the reset of the password for your Social account.\n\n' +
             'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
             'http://' + req.headers.host + '/reset/' + token + '\n\n' +
             'If you did not request this, please ignore this email and your password will remain unchanged.\n'+
             'All Rights Reserved. This mail is from Devesh Prasad owner of Socials, To contact him Mail deveshprasad577@yahoo.com. \n'};
         smtpTransport.sendMail(mailOptions, function(err) {
           console.log('mail sent');
-          req.flash('success', 'An e-mail has been sent to ' + user.email + ' with further instructions.');
+          req.flash('success', 'An e-mail has been sent to ' + user.email + ' with further instructions. Please ! Check your spam folder. You have 60 mins.');
           done(err, 'done');});}], function(err) {if (err) return next(err);res.redirect('/forgot');});
 });
 ////////////////////////////////////////////////  Reset Page  
@@ -125,7 +125,7 @@ router.post('/reset/:token', function(req, res) {
               user.save(function(err) {
                 req.logIn(user, function(err) {done(err, user);});
               });
-            })}else{req.flash("error", "Passwords do not match.");
+            })}else{req.flash("error", "Passwords do not match. Please! Try Again.");
                     return res.redirect('back');}});},
       function(user, done) {
         var smtpTransport = nodemailer.createTransport({
@@ -163,7 +163,7 @@ router.post('/reset/:token', function(req, res) {
       });});
  });  
  ///////////////////////////////////////////////////// Contact Page
- router.get("/contact",middleware.isLoggedIn,(req,res)=>{res.render("contact");});
+router.get("/contact",middleware.isLoggedIn,(req,res)=>{res.render("contact");});
 router.post('/contact',middleware.isLoggedIn,async (req, res) => {
   let { name, email, message } = req.body;
   name = req.sanitize(name);
