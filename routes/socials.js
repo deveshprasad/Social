@@ -61,9 +61,7 @@ router.get("/:id",(req,res)=>{
             req.flash("error","Social Not Found Sorry! Please Refresh And Try Again");
             res.redirect("back");
         }else{
-            console.log(foundsocial);
-            res.render("social/show",{social:foundsocial});
-        }
+            res.render("social/show",{social:foundsocial});}
     });
 });
 router.get("/:id/edit",middleware.checksocialOwnership,(req,res)=>{social.findById(req.params.id,(err,foundsocial)=>{
@@ -96,7 +94,6 @@ router.put("/:id", upload.single('image'), function(req, res){
       }
   });
 });
-
 router.delete('/:id', function(req, res) {
 social.findById(req.params.id, async function(err, social) {
   if(err) {
@@ -109,12 +106,9 @@ social.findById(req.params.id, async function(err, social) {
       req.flash('success', 'Social Deleted Successfully! PLease Refresh If Not Visible');
       res.redirect('/socials');
   } catch(err) {
-      if(err) {
+      if(err){
         req.flash("error", err.message);
-        return res.redirect("back");
-      }
-  }
-});
+        return res.redirect("back");}}});
 });
 function escapeRegex(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
