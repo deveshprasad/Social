@@ -8,11 +8,11 @@
 					<form action="/reset/<%= token %>" method="POST">
                     <div class="group my-4">
 						<label style="font-size: 1.2rem;color:white" for="password">New Password (Please a strong one with numbers, special characters.)</label>
-						<input type="password" name="password" value="" placeholder="NEW PASSWORD" autofocus="autofocus" class="input"  />
+						<input type="password" name="password" value="" required placeholder="NEW PASSWORD" autofocus="autofocus" class="input"  />
 					</div>
                     <div class="group my-4">
 						<label style="font-size: 1.2rem;color:white" for="confirm">Confirm Password</label>
-						<input type="password" name="confirm" value="" placeholder="CONFIRM PASSWORD" class="input"/>
+						<input type="password" name="confirm" value="" required placeholder="CONFIRM PASSWORD" class="input"/>
 					</div>
 					<div class="group my-4 px-5">
 						<button type="submit" class="btn btn-lg bigbox btn-block butt">Update Password</button>
