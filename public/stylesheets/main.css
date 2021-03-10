@@ -352,3 +352,12 @@ hr:hover {
 .animate-right{position:relative;animation:animateright 1.5s}@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
 .animate-bottom{position:relative;animation:animatebottom 0.5s}@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
 .animate-zoom {animation:animatezoom 1.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
+.bold{
+	font-weight:600;
+}
+a:hover{
+	color:rgb(252, 252, 27);
+}
+.link{
+	color:rgb(174, 250, 144);
+}
