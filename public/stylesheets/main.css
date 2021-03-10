@@ -184,7 +184,7 @@ a{color:inherit;text-decoration:none}
 	text-align:center;
 }
 .jumbotron{
-	padding: 20px auto;
+	padding: 0px auto;
 }
 .bigbox:hover {
 	animation: pop 1.1s ease-out;
@@ -359,5 +359,5 @@ a:hover{
 	color:rgb(252, 252, 27);
 }
 .link{
-	color:rgb(174, 250, 144);
+	color:rgb(251, 253, 123);
 }

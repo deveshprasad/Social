@@ -21,7 +21,7 @@
 <h1 style="font-weight:700;background-color: rgba(0,0,0,0.85);border-radius: 25px;border:1px solid rgba(255,255,255,0.55)">Social's created by <%= user.firstName %></h1><br>
         <ol>
             <% socials.forEach(function(social) {  %>
-                <li><p style="font-size:2rem;font-weight: 600;text-decoration: none;background-color: rgba(0, 0, 0, 0.85);border-radius: 25px"><a style="text-decoration: none;" href="/socials/<%= social.id %>"><%=social.name%> : $ <%=social.price%></p>
+                <li><p  class="link" style="font-size:2rem;font-weight: 600;text-decoration: none;background-color: rgba(0, 0, 0, 0.85);border-radius: 25px"><a style="text-decoration: none;" href="/socials/<%= social.id %>"><%=social.name%> : Rs <%=social.price%></p>
                <img class="img-responsive" src="<%= social.image %>" width="100%" style="box-shadow: 0 5px 8px 5px rgba(0, 0, 0, 0.9);border:2px solid rgb(184, 184, 184);border-radius: 15px;"></a></li>
             <% }); %>      
         </ol>
