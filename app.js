@@ -1,6 +1,6 @@
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, './.env') });
-//require('dotenv').config()
+require('dotenv').config()
 const express=require("express");
 const bodyParser=require("body-parser");
 const mongoose=require("mongoose");
@@ -18,7 +18,7 @@ const commentRoutes=require("./routes/comments"),
 socialRoutes=require("./routes/socials"),
 indexRoutes=require("./routes/index");
 const app=express();
-mongoose.connect("mongodb+srv://social_project123:32qXksegvD49Q5ns@socialsproject.k9oun.mongodb.net/SocialD",{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false,useCreateIndex:true});
+mongoose.connect(process.env.databaseURl,{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false,useCreateIndex:true});
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
