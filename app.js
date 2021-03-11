@@ -60,6 +60,11 @@ next();
 app.use('/',indexRoutes);
 app.use("/socials",socialRoutes);
 app.use("/socials/:id/comments",commentRoutes);
-app.listen(3000,()=>{
-    console.log("Server Sucking");
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port,()=>{
+    console.log("Server Started");
 });
