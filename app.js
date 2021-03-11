@@ -1,4 +1,6 @@
-require('dotenv').config()
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, './.env') });
+//require('dotenv').config()
 const express=require("express");
 const bodyParser=require("body-parser");
 const mongoose=require("mongoose");
@@ -42,7 +44,7 @@ passport.deserializeUser(function(id, done){
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "https://dry-ravine-57756.herokuapp.com//auth/google/secrets",
+    callbackURL: "https://dry-ravine-57756.herokuapp.com/auth/google/secrets",
     userProfileURL:"https://www.googleapis.com/oauth2/v3/userinfo"},
   function(accessToken, refreshToken, profile, cb) {
     console.log(profile);
