@@ -16,7 +16,7 @@ const commentRoutes=require("./routes/comments"),
 socialRoutes=require("./routes/socials"),
 indexRoutes=require("./routes/index");
 const app=express();
-mongoose.connect("mongodb://localhost:27017/SocialDB",{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false,useCreateIndex:true});
+mongoose.connect(process.env.databaseURl,{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false,useCreateIndex:true});
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");

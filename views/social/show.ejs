@@ -30,7 +30,7 @@
                 <div class="text-right animate-right"><br><a class="btn bigbox butt"  href="/socials/<%=social._id%>/comments/new">Add a comment <i class="fa fa-comments"></i>  </a></div> <hr>
                     <% social.comments.forEach((comment)=>{%>
                         <div class="row animate-left">
-                            <div class="col-md-12 px-5" style="background-color: rgba(0, 0, 0,0.85);border-radius: 25px;">
+                            <div class="col-md-12 px-5 my-2" style="background-color: rgba(0, 0, 0,0.85);border-radius: 25px;">
                                <strong style="color: whitesmoke;font-weight: 700;font-size: 1.8rem;"><i class="fa fa-user"></i> <%= comment.author.username%></strong>
                                <span class="pull-right" style="background-color:rgba(0, 0, 0,0.95);color:white;padding:5px;font-weight:700;"><%= moment(comment.createdAt).fromNow() %></span>
                                 <h5 style="color: white"><i class="fa fa-comment"></i> <%= comment.text%></h5>
