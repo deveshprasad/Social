@@ -8,11 +8,11 @@
 					<form action="/socials" method="post" enctype="multipart/form-data">
                     <div class="group my-4">
                         <label style="font-size:1.3rem;" for="" class="label">Name :</label>
-                        <input class="input" type="text" name="social[name]" placeholder="Name" >
+                        <input class="input" type="text" required name="social[name]" placeholder="Name" >
 					</div>
                     <div class="group my-4">
                         <label style="font-size:1.3rem;" for="" class="label">Price (Rs) :</label>
-                        <input class="input" type="number" name="social[price]" placeholder="Price" min="1" step="1" >
+                        <input class="input" type="number" required name="social[price]" placeholder="Price" min="1" step="1" >
                     </div>
                     <div class="group my-4">
                         <label style="font-size:1.3rem;" for="" class="label">Image :</label>
@@ -20,7 +20,7 @@
                     </div>
                     <div class="group my-4">
                         <label style="font-size:1.3rem;" for="" class="label">Description :</label> 
-                        <textarea id="user" class="input" name="social[description]" placeholder="Some description about your post ..." style="height:250px"></textarea>
+                        <textarea id="user" required class="input" name="social[description]" placeholder="Some description about your post ..." style="height:250px"></textarea>
                     </div>
                     <div class="group my-4 px-5">
                         <button class="btn btn-lg bigbox btn-block butt">Submit</button>
