@@ -12,9 +12,10 @@ Website Live : https://dry-ravine-57756.herokuapp.com/
 
 
 
-2)
 
-![110808349-e780e480-82a9-11eb-9b41-81cbab50c7fa](https://user-images.githubusercontent.com/63739986/110834272-5cace380-82c3-11eb-917c-1ab0831bc2a2.gif)
+![2](https://user-images.githubusercontent.com/63739986/110835058-52d7b000-82c4-11eb-9c90-4fd2f0efadbb.png)
+
+
 
 
 
@@ -23,5 +24,7 @@ Website Live : https://dry-ravine-57756.herokuapp.com/
 
 
 
+2)
 
-![2](https://user-images.githubusercontent.com/63739986/110835058-52d7b000-82c4-11eb-9c90-4fd2f0efadbb.png)
+![110808349-e780e480-82a9-11eb-9b41-81cbab50c7fa](https://user-images.githubusercontent.com/63739986/110834272-5cace380-82c3-11eb-917c-1ab0831bc2a2.gif)
+
