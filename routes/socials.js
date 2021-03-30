@@ -3,18 +3,23 @@ const router=express.Router({mergeParams:true});
 const social=require("../models/social");
 const middleware=require("../middleware");
 var multer = require('multer');
+
 var storage = multer.diskStorage({filename: function(req, file, callback) {callback(null, Date.now() + file.originalname);}});
+
 var imageFilter = function (req, file, cb) {
     if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
         return cb(new Error('Only Image Files Are Allowed!'), false);}
     cb(null, true);};
+
 var upload = multer({ storage: storage, fileFilter: imageFilter})
 var cloudinary = require('cloudinary');
+
 cloudinary.config({ 
   cloud_name: 'dcsgaregd', 
   api_key: process.env.CLOUDINARY_API_KEY, 
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
+
 /////////////////////////////   Main Page
 router.get("/",(req,res)=>{
     var noMatch=null;
@@ -23,8 +28,11 @@ router.get("/",(req,res)=>{
     social.find({name:regex},(err,social)=>{
         if(err){console.log(err);}
         else{
-          if(social.length<1){var noMatch="NO SOCIAL WITH THAT NAME EXISTS!"}
-                res.render("social/index",{social:social,noMatch:noMatch});}
+          if(social.length<1){
+              var noMatch="NO SOCIAL WITH THAT NAME EXISTS!"
+              }
+                res.render("social/index",{social:social,noMatch:noMatch});
+        }
     });
    }else{
     social.find({},(err,social)=>{
@@ -54,20 +62,28 @@ cloudinary.v2.uploader.upload(req.file.path, function(err, result) {
   });
 });
 ///////////////////////////// Add New Social Page
-router.get("/new",middleware.isLoggedIn,(req,res)=>{res.render("social/new");});
+router.get("/new",middleware.isLoggedIn,(req,res)=>{
+    res.render("social/new");
+});
+
 router.get("/:id",(req,res)=>{
     social.findById(req.params.id).populate("comments").exec((err,foundsocial)=>{
         if(err||!foundsocial){
             req.flash("error","Social Not Found Sorry! Please Refresh And Try Again");
             res.redirect("back");
         }else{
-            res.render("social/show",{social:foundsocial});}
+            res.render("social/show",{social:foundsocial}
+                      );
+        }
     });
 });
-router.get("/:id/edit",middleware.checksocialOwnership,(req,res)=>{social.findById(req.params.id,(err,foundsocial)=>{
+
+router.get("/:id/edit",middleware.checksocialOwnership,(req,res)=>{
+    social.findById(req.params.id,(err,foundsocial)=>{
 res.render("social/edit",{social:foundsocial});
   });
 });
+
 router.put("/:id", upload.single('image'), function(req, res){
   social.findById(req.params.id, async function(err, social){
       if(err){
@@ -94,6 +110,7 @@ router.put("/:id", upload.single('image'), function(req, res){
       }
   });
 });
+
 router.delete('/:id', function(req, res) {
 social.findById(req.params.id, async function(err, social) {
   if(err) {
@@ -113,4 +130,5 @@ social.findById(req.params.id, async function(err, social) {
 function escapeRegex(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };
+
 module.exports=router;
