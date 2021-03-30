@@ -3,33 +3,34 @@
 <div class="body hey">
 	<div class="login-wrap hey animate-zoom">
 		<div class="login-html" style="background-color:rgba(0,0,0,0.75)">
-			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Create New Social !</label>
-			<div class="login-form">
-					<form action="/socials" method="post" enctype="multipart/form-data">
-                    <div class="group my-4">
-                        <label style="font-size:1.3rem;" for="" class="label">Name :</label>
-                        <input class="input" type="text" required name="social[name]" placeholder="Name" >
-					</div>
-                    <div class="group my-4">
-                        <label style="font-size:1.3rem;" for="" class="label">Price (Rs) :</label>
-                        <input class="input" type="number" required name="social[price]" placeholder="Price" min="1" step="1" >
-                    </div>
-                    <div class="group my-4">
-                        <label style="font-size:1.3rem;" for="" class="label">Image :</label>
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Create New Social !</label>
+		<div class="login-form">
+		<form action="/socials" method="post" enctype="multipart/form-data">
+                <div class="group my-4">
+                <label style="font-size:1.3rem;" for="" class="label">Name :</label>
+                <input class="input" type="text" required name="social[name]" placeholder="Name" >
+		</div>
+                <div class="group my-4">
+                <label style="font-size:1.3rem;" for="" class="label">Price (Rs) :</label>
+                <input class="input" type="number" required name="social[price]" placeholder="Price" min="1" step="1" >
+                </div>
+                <div class="group my-4">
+                <label style="font-size:1.3rem;" for="" class="label">Image :</label>
                 <input type="file" id="image" name="image" accept="image/*" required style="background-color:black;color:white;font-weight:800;font-size:1.5rem;cursor:pointer;border:1px solid white">
-                    </div>
-                    <div class="group my-4">
-                        <label style="font-size:1.3rem;" for="" class="label">Description :</label> 
-                        <textarea id="user" required class="input" name="social[description]" placeholder="Some description about your post ..." style="height:250px"></textarea>
-                    </div>
-                    <div class="group my-4 px-5">
-                        <button class="btn btn-lg bigbox btn-block butt">Submit</button>
-                    </div>
-                    <div class="group my-4 " style="text-align:right">
-                        <a href="/socials" class="btn btn-lg bigbox butt">Go Back</a>
-                    </div>
-					</form><div class="hr"></div>
-			</div>
+                </div>
+                <div class="group my-4">
+                <label style="font-size:1.3rem;" for="" class="label">Description :</label> 
+                <textarea id="user" required class="input" name="social[description]" placeholder="Some description about your post ..." style="height:250px"></textarea>
+                </div>
+                <div class="group my-4 px-5">
+                <button class="btn btn-lg bigbox btn-block butt">Submit</button>
+                </div>
+                <div class="group my-4 " style="text-align:right">
+                    <a href="/socials" class="btn btn-lg bigbox butt">Go Back</a>
+                </div>
+		</form>
+		<div class="hr"></div>
+		</div>
 		</div>
 	</div>
 </div>
