@@ -3,20 +3,20 @@
 <div class="body hey">
 	<div class="login-wrap hey animate-zoom">
 		<div class="login-html" style="background-color:rgba(0,0,0,0.65)">
-		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Edit Your Comment !</label>
-		<div class="login-form my-4">
-		<form action="/socials/<%= social_id%>/comments/<%= comment._id%>?_method=PUT" method="post">
-               	<div class="group my-4">
-		<label style="font-size:1.5rem;" for="" class="label">Edit your comment i.e <br> <%= comment.text%> :</label>
-                <input class="input" type="text" name="comment[text]" value="<%= comment.text%> "  style="height: 50px;">    
-		</div>
-                <div class="group my-5 px-4">
-                <button class="btn btn-lg btn-dark btn-block bigbox butt">Submit</button>
-		</div>
-		<div class="group my-5">
-                <a href="/socials" class="btn btn-lg bigbox butt">Go Back</a>
-		</div>
-		</form>
+			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Edit Your Comment !</label>
+			<div class="login-form my-4">
+			<form action="/socials/<%= social_id%>/comments/<%= comment._id%>?_method=PUT" method="post">
+               			<div class="group my-4">
+					<label style="font-size:1.5rem;" for="" class="label">Edit your comment i.e <br> <%= comment.text%> :</label>
+                			<input class="input" type="text" name="comment[text]" value="<%= comment.text%> "  style="height: 50px;">    
+				</div>
+                	<div class="group my-5 px-4">
+                			<button class="btn btn-lg btn-dark btn-block bigbox butt">Submit</button>
+			</div>
+			<div class="group my-5">
+                		<a href="/socials" class="btn btn-lg bigbox butt">Go Back</a>
+			</div>
+			</form>
 		<div class="hr"></div>
 	     </div>
 	</div>
