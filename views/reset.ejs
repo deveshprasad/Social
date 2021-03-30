@@ -5,25 +5,25 @@
 		<div class="login-html" style="background-color:rgba(0,0,0,0.65)">
 		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Reset Password</label>
 		<div class="login-form my-4">
-		<form action="/reset/<%= token %>" method="POST">
-                <div class="group my-4">
-		<label style="font-size: 1.2rem;color:white" for="password">New Password (Please a strong one with numbers, special characters.)</label>
-		<input type="password" name="password" value="" required placeholder="NEW PASSWORD" autofocus="autofocus" class="input"  />
-		</div>
-                <div class="group my-4">
-		<label style="font-size: 1.2rem;color:white" for="confirm">Confirm Password</label>
-		<input type="password" name="confirm" value="" required placeholder="CONFIRM PASSWORD" class="input"/>
-		</div>
-		<div class="group my-4 px-5">
-		<button type="submit" class="btn btn-lg bigbox btn-block butt">Update Password</button>
-		</div>
-		<div class="group my-2 px-5">
-		<a href="/login" style="text-decoration: none;"><input type="" class="button2 bigbox" value="Already Have an Account ! Sign In"></a>
-		</div>
-		</form>
+			<form action="/reset/<%= token %>" method="POST">
+                	<div class="group my-4">
+				<label style="font-size: 1.2rem;color:white" for="password">New Password (Please a strong one with numbers, special characters.)</label>
+				<input type="password" name="password" value="" required placeholder="NEW PASSWORD" autofocus="autofocus" class="input"  />
+			</div>
+                	<div class="group my-4">
+				<label style="font-size: 1.2rem;color:white" for="confirm">Confirm Password</label>
+				<input type="password" name="confirm" value="" required placeholder="CONFIRM PASSWORD" class="input"/>
+			</div>
+			<div class="group my-4 px-5">
+				<button type="submit" class="btn btn-lg bigbox btn-block butt">Update Password</button>
+			</div>
+			<div class="group my-2 px-5">
+			<a href="/login" style="text-decoration: none;"><input type="" class="button2 bigbox" value="Already Have an Account ! Sign In"></a>
+			</div>
+			</form>
 		<div class="hr"></div>
 		</div>
-		</div>
+	     	</div>
 	</div>
 </div>
 <%- include("partials/footer") %>
